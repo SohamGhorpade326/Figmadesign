@@ -1,11 +1,11 @@
 import { ArrowRight } from 'lucide-react';
+import Image from 'next/image'; // <-- Import next/image
 
 const portfolioItems = [
     {
         title: "Stean",
         category: "BRANDING",
         description: "Modern branding aesthetics with brand marks, lettering and collateral for a luxury furniture brand. I drafted logos and built a lasting impression.",
-        // Using a relevant, high-quality image of a laptop mockup
         imageUrl: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop",
     },
 ];
@@ -20,19 +20,16 @@ const Portfolio: React.FC = () => {
                         MY LATEST WORKS
                     </h2>
                 </div>
-
                 {portfolioItems.map((item, index) => (
                     <div key={index} className="relative rounded-2xl overflow-hidden group shadow-2xl">
-                        <img 
+                        <Image 
                             src={item.imageUrl} 
                             alt={item.title} 
+                            width={1200} // <-- Add width
+                            height={800} // <-- Add height
                             className="w-full h-auto object-cover" 
-                            // Fallback in case the image fails to load
-                            onError={(e) => { e.currentTarget.src = 'https://placehold.co/1200x800/e0e0e0/333?text=Project+Stean'; }}
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-20 transition-opacity duration-500 group-hover:bg-opacity-10"></div>
-                        
-                        {/* Content Overlay */}
                         <div className="absolute bottom-10 right-10 flex items-center gap-4">
                            <div className="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 text-white text-left">
                                 <p className="text-xs font-bold tracking-widest text-gray-300 mb-1">{item.category}</p>
