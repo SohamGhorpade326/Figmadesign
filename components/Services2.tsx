@@ -1,71 +1,51 @@
-import Image from 'next/image'; // <-- Import next/image
+import React from 'react';
 
 const servicesData = [
-    {
-        title: "Graphic Design",
-        description: "Crafting distinct brand identities that resonate with the essence of each project, leaving a lasting impression. We've established brands seeking a fresh visual perspective.",
-        details: "What's included? Seamlessly transitioning between print and digital platforms, maintaining consistency and visual impact.",
-        mainImageUrl: "https://placehold.co/400x300/e8e8e8/333?text=Product+Box",
-        secondaryImageUrl: "https://placehold.co/200x200/d8d8d8/333?text=Cosmetic+Tube",
-    },
-    {
-        title: "Video Editing",
-        description: "Weaving compelling narratives through meticulous editing, bringing stories to life with a keen eye for pacing and visual elements to captivate audiences.",
-        details: "What's included? Professional color grading, engaging promotional videos, whether for solo entrepreneurs or established brands, ensuring your message is delivered beautifully.",
-        mainImageUrl: "https://placehold.co/300x400/2c2c2c/fff?text=Starry+Portrait",
-        secondaryImageUrl: "https://placehold.co/250x200/c4c4c4/333?text=Child+Watching",
-    },
-    {
-        title: "3D Animation",
-        description: "Creating immersive visuals for architectural visualization, I bring concepts to life with meticulous detail and cutting-edge rendering techniques.",
-        details: "What's included? From concept art to final reality renders, I channel my passion for creating immersive digital experiences and pushing the boundaries of digital expression.",
-        mainImageUrl: "https://placehold.co/400x500/3d3d3d/fff?text=3D+Character",
-        secondaryImageUrl: "https://placehold.co/250x200/1a1a1a/fff?text=Futuristic+Scene",
-    },
+    { title: "Visual Alchemist", description: "Crafting brand identities that transcend, ensuring your brand captivates and stands out in a crowded digital landscape." },
+    { title: "Aesthetic Maestro", description: "Elevating designs with a keen eye, weaving designs with a keen vision print and digital for consistently striking visuals." },
+    { title: "Storytelling Virtuoso", description: "Mastering the art of storytelling in video editing, creating compelling narratives for promotional videos and short films." },
 ];
+
+const DecorativeDiamond: React.FC = () => (
+    <div className="w-4 h-4 bg-gray-800 transform rotate-45 flex-shrink-0"></div>
+);
 
 const Services2: React.FC = () => {
     return (
-        <section id="services" className="bg-[#F5F2EC] py-24 md:py-32">
-            <div className="container mx-auto px-6 space-y-24">
-                {servicesData.map((service, index) => (
-                    <div 
-                        key={index} 
-                        className={`grid md:grid-cols-2 gap-12 md:gap-16 items-center ${index === 1 ? 'md:grid-flow-col-dense' : ''}`}
-                    >
-                        <div className={`text-gray-800 ${index === 1 ? 'md:col-start-2' : ''}`}>
-                            <h3 className="text-3xl md:text-4xl font-extrabold mb-4">{service.title}</h3>
-                            <p className="text-gray-600 mb-6">{service.description}</p>
-                            <div className="border-t border-gray-300 pt-4">
-                                <h4 className="font-bold mb-2">What&apos;s included?</h4>
-                                <p className="text-gray-600 text-sm">{service.details}</p>
-                            </div>
-                        </div>
-                        <div className={`relative h-96 ${index === 1 ? 'md:col-start-1' : ''}`}>
-                            <Image 
-                                src={service.mainImageUrl} 
-                                alt={service.title} 
-                                width={400} height={300}
-                                className={`absolute object-cover rounded-2xl shadow-lg ${
-                                    index === 1 
-                                    ? 'top-0 right-0 w-3/5 h-4/5' 
-                                    : 'bottom-0 left-0 w-4/5 h-4/5'
-                                }`} 
-                            />
-                            <Image 
-                                src={service.secondaryImageUrl} 
-                                alt={`${service.title} detail`} 
-                                width={250} height={200}
-                                className={`absolute object-cover rounded-2xl shadow-lg ${
-                                    index === 1 
-                                    ? 'bottom-0 left-0 w-2/5 h-2/5' 
-                                    : 'top-0 right-0 w-2/5 h-3/5'
-                                }`} 
-                            />
-                        </div>
+        <section id="services" className="bg-[#F5F2EC] pt-24 md:pt-32 pb-96 relative">
+            <div className="container mx-auto px-6 relative z-10">
+                 <div className="text-left mb-16 max-w-lg">
+                    <p className="text-sm font-bold text-gray-500 mb-2">MY OFFERS</p>
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800">
+                        ART OF VISUAL ALCHEMY
+                    </h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-x-16 gap-y-12">
+                    <div className="flex justify-center md:justify-start">
+                         <a href="#contact" className="px-8 py-3 h-fit font-semibold text-gray-700 border-2 border-gray-400 rounded-full hover:bg-gray-800 hover:text-white hover:border-gray-800 transition-all duration-300">
+                            CONTACT ME
+                        </a>
                     </div>
-                ))}
+                    <div className="space-y-12">
+                        {servicesData.map((service, index) => (
+                            <div key={index} className="flex items-start gap-6">
+                                <div className="pt-2"><DecorativeDiamond /></div>
+                                <div>
+                                    <h3 className="text-2xl font-bold text-gray-800 mb-2">{service.title}</h3>
+                                    <p className="text-gray-600">{service.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
+            <div
+              aria-hidden="true"
+              className="absolute bottom-0 left-0 w-full h-[70vh] z-0"
+              style={{
+                background: 'linear-gradient(to top, #111111 5%, rgba(212, 98, 153, 0.45) 50%, rgba(253, 202, 138, 0.4) 85%, transparent 100%)'
+              }}
+            ></div>
         </section>
     );
 };

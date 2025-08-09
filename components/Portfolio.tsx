@@ -1,12 +1,13 @@
+import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image'; // <-- Import next/image
+import Image from 'next/image';
 
 const portfolioItems = [
     {
         title: "Stean",
         category: "BRANDING",
         description: "Modern branding aesthetics with brand marks, lettering and collateral for a luxury furniture brand. I drafted logos and built a lasting impression.",
-        imageUrl: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop",
+        imageUrl: "https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
 ];
 
@@ -25,8 +26,8 @@ const Portfolio: React.FC = () => {
                         <Image 
                             src={item.imageUrl} 
                             alt={item.title} 
-                            width={1200} // <-- Add width
-                            height={800} // <-- Add height
+                            width={1200}
+                            height={800}
                             className="w-full h-auto object-cover" 
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-20 transition-opacity duration-500 group-hover:bg-opacity-10"></div>
