@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['placehold.co', 'images.pexels.com'], // Whitelist both domains
+    domains: ['placehold.co', 'images.pexels.com'],
   },
 }
 
