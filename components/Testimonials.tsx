@@ -1,10 +1,40 @@
-import Image from 'next/image'; // <-- Import next/image
+/*
+================================================================================
+File: /components/Testimonials.tsx (FINAL VERSION)
+================================================================================
+*/
+import React from 'react';
+import Image from 'next/image';
 
 const testimonialsData = [
-    { name: "TechStartup Xperience", company: "Nathan Thompson", testimonial: "Ability to capture the essence of our vision and translate it into a visually stunning logo exceeded our expectations.", logoUrl: "https://placehold.co/40x40/cccccc/333?text=T" },
-    { name: "GlorifiedBrand", company: "Sarah Thompson", testimonial: "Ability to capture the essence of our vision and translate it into a visually stunning logo exceeded our expectations.", logoUrl: "https://placehold.co/40x40/cccccc/333?text=G" },
-    { name: "WorldofStartups", company: "Michael Johnson", testimonial: "Ability to capture the essence of our vision and translate it into a visually stunning logo exceeded our expectations.", logoUrl: "https://placehold.co/40x40/cccccc/333?text=W" },
-    { name: "StartupNation", company: "Emily Williams", testimonial: "Ability to capture the essence of our vision and translate it into a visually stunning logo exceeded our expectations.", logoUrl: "https://placehold.co/40x40/cccccc/333?text=S" },
+    {
+        name: "TechStartup Xperience",
+        author: "SARAH THOMPSON",
+        testimonial: "Ability to capture the essence of our vision and translate it into a visually stunning logo exceeded our expectations.",
+        date: "February 2024",
+        logoUrl: "https://placehold.co/40x40/111111/ffffff?text=🚀",
+    },
+    {
+        name: "GlorifiedBrand",
+        author: "SARAH THOMPSON",
+        testimonial: "Ability to capture the essence of our vision and translate it into a visually stunning logo exceeded our expectations.",
+        date: "January 2024",
+        logoUrl: "https://placehold.co/40x40/111111/ffffff?text=⚙️",
+    },
+    {
+        name: "WorldofStartups",
+        author: "SARAH THOMPSON",
+        testimonial: "Ability to capture the essence of our vision and translate it into a visually stunning logo exceeded our expectations.",
+        date: "November 2023",
+        logoUrl: "https://placehold.co/40x40/111111/ffffff?text=🌍",
+    },
+    {
+        name: "StartupNation",
+        author: "SARAH THOMPSON",
+        testimonial: "Ability to capture the essence of our vision and translate it into a visually stunning logo exceeded our expectations.",
+        date: "April 2023",
+        logoUrl: "https://placehold.co/40x40/111111/ffffff?text=💡",
+    },
 ];
 
 const Testimonials: React.FC = () => {
@@ -22,17 +52,19 @@ const Testimonials: React.FC = () => {
                         </svg>
                     </div>
                 </div>
+
                 <div className="grid md:grid-cols-2 gap-8">
                     {testimonialsData.map((item, index) => (
                         <div key={index} className="bg-gradient-to-br from-white to-[#dfa332] p-8 rounded-2xl text-gray-900 shadow-lg">
-                            <div className="flex items-center mb-4">
-                                <Image src={item.logoUrl} alt={`${item.name} logo`} width={40} height={40} className="rounded-full mr-4 bg-gray-200" />
+                            <div className="flex items-center mb-4 gap-4">
+                                <Image src={item.logoUrl} alt={`${item.name} logo`} width={48} height={48} className="rounded-full bg-white p-2" />
                                 <div>
                                     <h3 className="font-bold text-xl">{item.name}</h3>
-                                    <p className="text-sm text-gray-500">{item.company}</p>
+                                    <p className="text-xs font-semibold text-gray-500 tracking-wider">{item.author}</p>
                                 </div>
                             </div>
-                            <p className="text-gray-700">&quot;{item.testimonial}&quot;</p>
+                            <p className="text-gray-700 mb-6">&quot;{item.testimonial}&quot;</p>
+                            <p className="text-right text-sm font-medium text-gray-500">{item.date}</p>
                         </div>
                     ))}
                 </div>
