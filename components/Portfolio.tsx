@@ -7,7 +7,7 @@ const portfolioItems = [
         title: "Stean",
         category: "BRANDING",
         description: "Modern branding aesthetics with brand marks, lettering and collateral for a luxury furniture brand. I drafted logos and built a lasting impression.",
-        imageUrl: "https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        imageUrl: "https://images.pexels.com/photos/4103247/pexels-photo-4103247.jpeg",
     },
 ];
 

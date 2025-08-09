@@ -12,7 +12,7 @@ const Testimonials: React.FC = () => {
         <section id="testimonials" className="bg-[#111111] py-24 md:py-32">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16 text-white">
-                    <p className="text-sm font-bold text-gray-500 mb-2">TESTIMONIALS</p>
+                    <p className="text-sm font-bold text-orange-500 mb-2">TESTIMONIALS</p>
                     <div className="flex items-center justify-center gap-4">
                         <h2 className="text-4xl md:text-5xl font-extrabold">
                             WHAT PEOPLE SAY
@@ -24,7 +24,7 @@ const Testimonials: React.FC = () => {
                 </div>
                 <div className="grid md:grid-cols-2 gap-8">
                     {testimonialsData.map((item, index) => (
-                        <div key={index} className="bg-gradient-to-br from-white to-[#FDF4E3] p-8 rounded-2xl text-gray-900 shadow-lg">
+                        <div key={index} className="bg-gradient-to-br from-white to-[#dfa332] p-8 rounded-2xl text-gray-900 shadow-lg">
                             <div className="flex items-center mb-4">
                                 <Image src={item.logoUrl} alt={`${item.name} logo`} width={40} height={40} className="rounded-full mr-4 bg-gray-200" />
                                 <div>
